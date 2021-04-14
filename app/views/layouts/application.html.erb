@@ -26,7 +26,7 @@
               <% if user_signed_in? %>
                 <li class="nav-item active"><%= link_to "Home", destroy_user_session_path, method: :delete, class:'fas fa-home nav-link text-light' %></li>
                 <li class="nav-item active"><%= link_to "Users", destroy_user_session_path, method: :delete, class:'fas fa-users nav-link text-light' %></li>
-                <li class="nav-item active"><%= link_to "Books", destroy_user_session_path, method: :delete, class:'fas fa-book-open nav-link text-light' %></li>
+                <li class="nav-item active"><%= link_to "Books", books_path, class:'fas fa-book-open nav-link text-light' %></li>
                 <li class="nav-item active"><%= link_to "logout", destroy_user_session_path, method: :delete, class:'fas fa-sign-out-alt nav-link text-light' %></li>
               <% else %>
                 <li class="nav-item active"><%= link_to "Home", new_user_registration_path, class:'fas fa-home nav-link text-light' %></li>

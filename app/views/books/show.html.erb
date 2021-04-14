@@ -1,0 +1,16 @@
+<div class="content">
+  <h1>Book detail</h1>
+  <table>
+    <tbody>
+      <tr>
+        <td><%= link_to @book.title, book_path(@book) %></td>
+        <td><%= @book.body %></td>
+        <td><%= link_to 'Edit', edit_book_path(@book) %></td>
+        <td><%= link_to 'Destroy',
+                book_path(@book),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
