@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task3</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-lists">
+        <% if user_signed_in? %>
+          <%= link_to "Home", destroy_user_session_path, method: :delete %>
+          <%= link_to "Users", destroy_user_session_path, method: :delete %>
+          <%= link_to "Books", destroy_user_session_path, method: :delete %>
+          <%= link_to "logout", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Home", new_user_registration_path %>
+          <%= link_to "About", new_user_registration_path %>
+          <%= link_to "sign up", new_user_registration_path %>
+          <%= link_to "login", new_user_session_path %>
+        <% end %>
+      </div>
+    </header>
+    <%= yield %>
+  </body>
+</html>
